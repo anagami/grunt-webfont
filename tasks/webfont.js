@@ -240,8 +240,8 @@ module.exports = function(grunt) {
 					var htmlContext = {
 						fontBaseName: fontBaseName,
 						glyphs: glyphs,
-						baseClass: syntax === 'bem' ? 'icon' : '',
-						classPrefix: 'icon' + (syntax === 'bem' ? '_' : '-'),
+						baseClass: syntax === 'bem' ? bemBlock : '',
+						classPrefix: bemBlock + (syntax === 'bem' ? '_' : '-'),
 						styles: htmlStyles,
 						ligatures: addLigatures
 					};
