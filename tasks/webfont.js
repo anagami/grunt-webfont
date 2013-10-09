@@ -41,6 +41,7 @@ module.exports = function(grunt) {
 
 		// Options
 		var fontBaseName = options.font || 'icons';
+		var bemBlock = options.bemClass || 'icon';
 		var fontName = fontBaseName;
 		var destCss = params.destCss || params.dest;
 		var dest = params.dest;
@@ -190,6 +191,7 @@ module.exports = function(grunt) {
 
 				var cssContext = {
 					fontBaseName: fontBaseName,
+					bemBlock: bemBlock,
 					fontName: fontName,
 					fontSrc1: fontSrc1,
 					fontSrc2: fontSrc2,
