@@ -158,6 +158,9 @@ module.exports = function(grunt) {
 					fontSrc1.push('url("' + relativeFontPath + fontName + '.eot")');
 					fontSrc2.push('url("' + relativeFontPath + fontName + '.eot?#iefix") format("embedded-opentype")');
 				}
+				if (has(types, 'svg')) {
+					fontSrc2.push('url("' + relativeFontPath + fontName + '.svg?#'+fontBaseName+'") format("svg")');
+				}
 				if (has(types, 'woff')) {
 					var woffFontUrl;
 					if (has(embed, 'woff')) {
@@ -177,9 +180,6 @@ module.exports = function(grunt) {
 						ttfFontUrl = '"' + relativeFontPath + fontName + '.ttf"';
 					}
 					fontSrc2.push('url(' + ttfFontUrl + ') format("truetype")');
-				}
-				if (has(types, 'svg')) {
-					fontSrc2.push('url("' + relativeFontPath + fontName + '.svg?#'+fontBaseName+'") format("svg")');
 				}
 				fontSrc1 = fontSrc1.join(fontSrcSeparator);
 				fontSrc2 = fontSrc2.join(fontSrcSeparator);
